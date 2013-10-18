@@ -16,14 +16,6 @@
 using namespace std;
 const int cantidadDigitosVector2=1000;
 
-struct ArregloVector {
-    int numero[1000]; // El vector
-};
-
-
-
-
-
 //IMPRIME LOS DIGITOS DE UN VECTOR
 void imprimirNum(vector<short> vector1){
     
@@ -42,7 +34,7 @@ vector<short> alargarVector(vector<short> vector1,int largoVectorMayor){
     int auxContador=0;
     int largoVector1=(int)vector1.size();
     int espacioRestante=largoVectorMayor;
-    cout<<"LARGO VECTOR mAYOR :"<<largoVectorMayor<<endl;
+   // cout<<"LARGO VECTOR mAYOR :"<<largoVectorMayor<<endl;
     if (largoVectorMayor>vector1.size()) {
         for (int i=0; i<largoVectorMayor; i++) {
           
@@ -61,8 +53,8 @@ vector<short> alargarVector(vector<short> vector1,int largoVectorMayor){
     else{
         vectorAux=vector1;
     }
-    cout<<"Vector Alargado :"<<endl;
-    imprimirNum(vectorAux);
+  //  cout<<"Vector Alargado :"<<endl;
+    //imprimirNum(vectorAux);
     return vectorAux;
 }
 
@@ -80,18 +72,18 @@ vector<short> sumaVectoresEspecial(vector<short> vectores[],int cantVectores){
    
     for (int i=0; i<cantVectores; i++) {
         vectoresAlargados[i]=alargarVector(vectores[i], largoAux);
-        cout<<"VEctores Alargador :"<<endl;
-        imprimirNum(vectoresAlargados[i]);
+     //   cout<<"VEctores Alargador :"<<endl;
+        //imprimirNum(vectoresAlargados[i]);
         
     }
     
-    cout<<"Temrina Vectores ALARGADOS "<<endl;
+    //cout<<"Temrina Vectores ALARGADOS "<<endl;
     
     for (int i=0; i<largoAux; i++) {
        
         for (int j=0; j<cantVectores; j++) {
             vectorAux=vectoresAlargados[j];
-            imprimirNum(vectorAux);
+           // imprimirNum(vectorAux);
             sumaAux1=sumaAux1+vectorAux[i];
             
         }
@@ -156,18 +148,17 @@ vector<short> agregarCerosVector(int numeroMayor,int digitoMultiplicar,int largo
     auxVector=convertirIntAVector(resultadoMulti);
     int largoAuxVector=(int)auxVector.size();
     
-    cout<<"LARGO QUE ENTRA :"<<largo<<endl;
+  //  cout<<"LARGO QUE ENTRA :"<<largo<<endl;
   
     
     for (int i=0; i<largo; i++) {
-        
-       
+    
             auxVector.push_back(0);
         
         
     }
-    cout<<"Imprimir Agregar Ceros :"<<endl;
-    imprimirNum(auxVector);
+   // cout<<"Imprimir Agregar Ceros :"<<endl;
+   // imprimirNum(auxVector);
     
     
     
@@ -205,42 +196,21 @@ void multiplicar(vector<short> vector1,vector<short> vector2){
 }
 
 
-//SEPARA CADA LETRA DE UN STRING LO DEJA EN UN VECTOR NUMERICO
-vector<short> separarNumero(string entrada){
-    vector<short> vector1;
-    
-    
-    int aux;
-    
-    for (int i=0; i<entrada.length(); i++) {
-        
-        aux=(int)entrada[i] - 48;
-        vector1.push_back(aux);
-        
-    }
-    
-    return vector1;
-    
-}
-
-
 int main(int argc, const char * argv[])
 {
 
-    string entrada;
     int entrada2;
+    int entrada3;
     vector<short> vector1;
     vector<short> vector2;
     
     cout<<"::INGRESE UN NUMERO::"<<endl;
-    cin>>entrada;
+    cin>>entrada3;
     cout<<"::INGRESE OTRO NUMERO::"<<endl;
     cin>>entrada2;
     
-    
-    int a=100000*70000;
-    cout<<"Multiplicacion numero Grande"<<a<<endl;
-    vector1=separarNumero(entrada);
+
+    vector1=convertirIntAVector(entrada3);
     //cout<<"Numero Vector a Int : "<<convertirVectorAInt(vector1)<<endl;
     //cout<<"Numero INT a Vector :"<<endl;
     vector2=convertirIntAVector(entrada2);
